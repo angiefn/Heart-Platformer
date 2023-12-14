@@ -92,3 +92,7 @@ animation = &"run"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_w8ae8")
+
+[node name="Coyote Jump Timer" type="Timer" parent="."]
+wait_time = 0.15
+one_shot = true
