@@ -1,46 +1,26 @@
-[gd_scene load_steps=14 format=3 uid="uid://bjbib7cvjp3v1"]
+[gd_scene load_steps=16 format=3 uid="uid://bjbib7cvjp3v1"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_ln50l"]
 [ext_resource type="Resource" uid="uid://buqiqdgqpn16" path="res://DefultMovementData.tres" id="2_onctq"]
-[ext_resource type="Texture2D" uid="uid://db34qqr0dkden" path="res://player.png" id="2_ypt2v"]
+[ext_resource type="Texture2D" uid="uid://tg2owe5xqklo" path="res://duckwalk1.png" id="4_0fld6"]
+[ext_resource type="Texture2D" uid="uid://ba1af3sp2cyra" path="res://duckwalk2.png" id="5_cnbnj"]
+[ext_resource type="Texture2D" uid="uid://3i6acejp3c0e" path="res://duckwalk3.png" id="6_wp0ux"]
+[ext_resource type="Texture2D" uid="uid://xcp84w2d56bd" path="res://duckwalk4.png" id="7_hah1e"]
+[ext_resource type="Texture2D" uid="uid://d1ff7oaekbp4b" path="res://duckwalk5.png" id="8_kthak"]
+[ext_resource type="Texture2D" uid="uid://cikmwwb8x1yw3" path="res://duckwalk6.png" id="9_lfvjd"]
+[ext_resource type="Texture2D" uid="uid://bk3uu8x6t7pvd" path="res://duckwalk7.png" id="10_sgv8k"]
+[ext_resource type="Texture2D" uid="uid://ckjnvdid14nw6" path="res://duckwalk8.png" id="11_3gdtu"]
+[ext_resource type="Texture2D" uid="uid://cjkmnd2hae18s" path="res://duckwalk9.png" id="12_ax0r1"]
+[ext_resource type="Texture2D" uid="uid://chu4o3iupeyeq" path="res://duckwalk10.png" id="13_ag2ec"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nxkxw"]
-atlas = ExtResource("2_ypt2v")
-region = Rect2(0, 0, 24, 20)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rbeb3"]
-atlas = ExtResource("2_ypt2v")
-region = Rect2(144, 0, 24, 20)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_axtf3"]
-atlas = ExtResource("2_ypt2v")
-region = Rect2(0, 0, 24, 20)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ptodj"]
-atlas = ExtResource("2_ypt2v")
-region = Rect2(24, 0, 24, 20)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gv8xk"]
-atlas = ExtResource("2_ypt2v")
-region = Rect2(48, 0, 24, 20)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nf32g"]
-atlas = ExtResource("2_ypt2v")
-region = Rect2(72, 0, 24, 20)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hly37"]
-atlas = ExtResource("2_ypt2v")
-region = Rect2(96, 0, 24, 20)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nl0lx"]
-atlas = ExtResource("2_ypt2v")
-region = Rect2(120, 0, 24, 20)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_swgp2"]
+load_path = "res://.godot/imported/duckjump.png-56d930e8dd91712ca0c72564310c1c14.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g8plj"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nxkxw")
+"texture": ExtResource("4_0fld6")
 }],
 "loop": true,
 "name": &"idle",
@@ -48,7 +28,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rbeb3")
+"texture": SubResource("CompressedTexture2D_swgp2")
 }],
 "loop": true,
 "name": &"jump",
@@ -56,22 +36,34 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_axtf3")
+"texture": ExtResource("4_0fld6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ptodj")
+"texture": ExtResource("5_cnbnj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gv8xk")
+"texture": ExtResource("6_wp0ux")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nf32g")
+"texture": ExtResource("7_hah1e")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hly37")
+"texture": ExtResource("8_kthak")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nl0lx")
+"texture": ExtResource("9_lfvjd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_sgv8k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_3gdtu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ax0r1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ag2ec")
 }],
 "loop": true,
 "name": &"run",
@@ -87,9 +79,10 @@ script = ExtResource("1_ln50l")
 movement_data = ExtResource("2_onctq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -10)
+position = Vector2(0, -8)
+scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_g8plj")
-animation = &"run"
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)
@@ -98,3 +91,6 @@ shape = SubResource("RectangleShape2D_w8ae8")
 [node name="Coyote Jump Timer" type="Timer" parent="."]
 wait_time = 0.15
 one_shot = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(2.08165e-12, -32)

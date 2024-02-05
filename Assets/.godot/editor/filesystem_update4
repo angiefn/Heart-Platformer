@@ -1,5 +1,2 @@
-res://Player.gd
 res://world.tscn
-res://PlayerMovementData.gd
 res://Player.tscn
-res://DefultMovementData.tres
