@@ -1,8 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgytpj5kxmsdc"]
+[gd_scene load_steps=9 format=3 uid="uid://dgytpj5kxmsdc"]
 
 [ext_resource type="Script" path="res://World.gd" id="1_fg8gc"]
 [ext_resource type="PackedScene" uid="uid://bjbib7cvjp3v1" path="res://player.tscn" id="2_80hju"]
-[ext_resource type="Resource" uid="uid://bk3nq2l3reank" path="res://SlowMovementData.tres" id="3_do20i"]
+[ext_resource type="Texture2D" uid="uid://27x4txgak1vu" path="res://sky.png" id="3_d1j7q"]
+[ext_resource type="Texture2D" uid="uid://27hfcq3rpfa5" path="res://moon.png" id="4_1bs0f"]
+[ext_resource type="Texture2D" uid="uid://dfo6axhfyrh67" path="res://treemid.png" id="6_6xdee"]
+[ext_resource type="Texture2D" uid="uid://dno3vq2tyyd2s" path="res://treefront.png" id="7_i4pam"]
+[ext_resource type="Texture2D" uid="uid://buisjpdncuo6x" path="res://glow.png" id="7_j1620"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u2iic"]
 size = Vector2(24.5, 65)
@@ -12,7 +16,6 @@ script = ExtResource("1_fg8gc")
 
 [node name="Player" parent="." instance=ExtResource("2_80hju")]
 position = Vector2(40, 72)
-movement_data = ExtResource("3_do20i")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -32,3 +35,57 @@ offset_bottom = 64.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(264, 32)
 shape = SubResource("RectangleShape2D_u2iic")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+offset = Vector2(90, -5)
+transform = Transform2D(1, 0, 0, 1, 90, -5)
+
+[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-2.08165e-12, -20)
+motion_scale = Vector2(0.5, 1)
+motion_mirroring = Vector2(234, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sky"]
+position = Vector2(40, 39.5)
+scale = Vector2(3.65625, 3.65625)
+texture = ExtResource("3_d1j7q")
+
+[node name="moon" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(2.08165e-12, -19.3548)
+motion_scale = Vector2(0.1, 1)
+motion_mirroring = Vector2(234, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/moon"]
+position = Vector2(40, 39.5)
+scale = Vector2(3.65625, 3.65625)
+texture = ExtResource("4_1bs0f")
+
+[node name="tree mid" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(2.08165e-12, -19.3548)
+motion_scale = Vector2(0.7, 1)
+motion_mirroring = Vector2(234, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/tree mid"]
+position = Vector2(40, 39.5)
+scale = Vector2(3.65625, 3.65625)
+texture = ExtResource("6_6xdee")
+
+[node name="tree front" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(2.08165e-12, -19.3548)
+motion_scale = Vector2(0.9, 1)
+motion_mirroring = Vector2(234, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/tree front"]
+position = Vector2(40, 39.5)
+scale = Vector2(3.65625, 3.65625)
+texture = ExtResource("7_i4pam")
+
+[node name="glow" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(2.08165e-12, -19.3548)
+motion_scale = Vector2(0.1, 1)
+motion_mirroring = Vector2(234, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/glow"]
+position = Vector2(40, 39.5)
+scale = Vector2(3.65625, 3.65625)
+texture = ExtResource("7_j1620")

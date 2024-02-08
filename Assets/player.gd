@@ -27,8 +27,6 @@ func _physics_process(delta):
 	var just_left_ledge = was_on_floor and not is_on_floor() and velocity.y >= 0
 	if just_left_ledge: 
 		coyote_jump_timer.start()
-	if Input.is_action_just_pressed("ui_accept"):
-		movement_data = load("res://FasterPlayerMovement.tres")
 	just_wall_jumped = false
 	
 func apply_gravity(delta):
@@ -40,6 +38,7 @@ func handle_wall_jump():
 	var wall_normal = get_wall_normal()
 	if Input.is_action_just_pressed("ui_up"):
 		velocity.x = wall_normal.x * movement_data.speed
+		animated_sprite_2d.flip_h = false
 		velocity.y = movement_data.jump_velocity
 		just_wall_jumped = true
 	
