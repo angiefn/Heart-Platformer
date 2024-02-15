@@ -10,6 +10,7 @@ var air_jump = false
 var just_wall_jumped = false
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var coyote_jump_timer = $"Coyote Jump Timer"
+@onready var starting_position = global_position
 
 func _physics_process(delta):
 	apply_gravity(delta)
@@ -48,7 +49,7 @@ func handle_jump():
 	if is_on_floor() or coyote_jump_timer.time_left > 0.0:
 		if Input.is_action_just_pressed("ui_up"):
 			velocity.y = movement_data.jump_velocity
-	if not is_on_floor(): 
+	elif not is_on_floor(): 
 		if Input.is_action_just_released("ui_up") and velocity.y < movement_data.jump_velocity / 2:
 			velocity.y = movement_data.jump_velocity / 2
 		
@@ -78,3 +79,7 @@ func apply_air_resistance(input_axis, delta):
 		velocity.x = move_toward(velocity.x , 0, movement_data.air_resistance * delta)
 	
 	
+
+
+func _on_hazard_detector_area_entered(area):
+	global_position = starting_position
