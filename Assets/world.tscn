@@ -122,3 +122,4 @@ scale = Vector2(0.35, 0.35)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Level Completed" parent="CanvasLayer" instance=ExtResource("10_prmeo")]
+visible = false

@@ -5,3 +5,4 @@ res://Player.tscn
 res://heart.tscn
 res://Heart.gd
 res://level_completed.tscn
+res://events.gd
