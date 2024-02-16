@@ -1,8 +1,5 @@
+res://tile_map.tscn
 res://world.tscn
 res://acid.tscn
-res://hazard_area.tscn
-res://Player.tscn
 res://heart.tscn
-res://Heart.gd
 res://level_completed.tscn
-res://events.gd
