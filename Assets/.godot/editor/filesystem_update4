@@ -1,11 +1,10 @@
-res://world.tscn
+res://start_menu.gd
+res://start_menu.tscn
 res://acid.tscn
 res://heart.tscn
 res://level_completed.tscn
 res://tile_map.tscn
-res://world_copy.tscn
 res://level_one.tscn
-res://Player.tscn
+res://world_copy.tscn
 res://level_two.tscn
-res://LevelTransition.gd
 res://level_transition.tscn
