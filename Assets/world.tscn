@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dgytpj5kxmsdc"]
 
 [ext_resource type="Script" path="res://World.gd" id="1_fg8gc"]
-[ext_resource type="PackedScene" uid="uid://bjbib7cvjp3v1" path="res://player.tscn" id="2_80hju"]
+[ext_resource type="PackedScene" uid="uid://bjbib7cvjp3v1" path="res://Player.tscn" id="2_80hju"]
 [ext_resource type="Texture2D" uid="uid://27x4txgak1vu" path="res://sky.png" id="3_d1j7q"]
 [ext_resource type="Texture2D" uid="uid://27hfcq3rpfa5" path="res://moon.png" id="4_1bs0f"]
 [ext_resource type="Texture2D" uid="uid://dfo6axhfyrh67" path="res://treemid.png" id="6_6xdee"]

@@ -97,6 +97,10 @@ shape = SubResource("RectangleShape2D_w8ae8")
 wait_time = 0.15
 one_shot = true
 
+[node name="Wall Jump Timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(2.08165e-12, -32)
 zoom = Vector2(1.1, 1.1)

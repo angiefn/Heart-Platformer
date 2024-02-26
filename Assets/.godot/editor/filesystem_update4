@@ -1,5 +1,5 @@
-res://start_menu.gd
-res://start_menu.tscn
+res://Player.tscn
+res://Player.gd
 res://acid.tscn
 res://heart.tscn
 res://level_completed.tscn
@@ -8,3 +8,9 @@ res://level_one.tscn
 res://world_copy.tscn
 res://level_two.tscn
 res://level_transition.tscn
+res://start_menu.tscn
+res://default.tres
+res://white_9slice.tres
+res://black_9slice.tres
+res://start_menu.gd
+res://world.tscn
